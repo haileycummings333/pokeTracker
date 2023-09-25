@@ -13,6 +13,7 @@
         android:layout_marginTop="15dp"
         android:ems="10"
         android:inputType="text"
+        android:text="Glastrier"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/speciesEdit"
         app:layout_constraintHorizontal_bias="1.0"
@@ -26,6 +27,7 @@
         android:layout_marginTop="15dp"
         android:ems="10"
         android:inputType="numberDecimal"
+        android:text="2.2 m"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/weightEdit"
         app:layout_constraintStart_toStartOf="@+id/weightEdit"
@@ -206,21 +208,21 @@
             android:id="@+id/femaleRdButton"
             android:layout_width="85dp"
             android:layout_height="wrap_content"
-            android:text="Female"
+            android:text="@string/female"
             android:textSize="12sp" />
 
         <RadioButton
             android:id="@+id/maleRdButton"
             android:layout_width="82dp"
             android:layout_height="wrap_content"
-            android:text="Male"
+            android:text="@string/male"
             android:textSize="12sp" />
 
         <RadioButton
             android:id="@+id/unkRdButton"
             android:layout_width="69dp"
             android:layout_height="match_parent"
-            android:text="Unk"
+            android:text="@string/unknown"
             android:textSize="12sp" />
     </RadioGroup>
 
@@ -232,6 +234,7 @@
         android:layout_marginEnd="15dp"
         android:ems="10"
         android:inputType="number"
+        android:text="0"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/attackEdit" />
@@ -243,6 +246,7 @@
         android:layout_marginTop="15dp"
         android:ems="10"
         android:inputType="numberDecimal"
+        android:text="800.0 kg"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/spinner"
         app:layout_constraintStart_toStartOf="@+id/spinner"
@@ -255,6 +259,7 @@
         android:layout_marginTop="75dp"
         android:ems="10"
         android:inputType="number"
+        android:text="0"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/attackEdit"
         app:layout_constraintStart_toStartOf="@+id/attackEdit"
@@ -267,6 +272,7 @@
         android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="number"
+        android:text="0"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/defenseEdit"
         app:layout_constraintStart_toStartOf="@+id/defenseEdit"
@@ -279,6 +285,7 @@
         android:layout_marginTop="15dp"
         android:ems="10"
         android:inputType="text"
+        android:text="Wild Horse Pokemon"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/radioGroup"
         app:layout_constraintStart_toStartOf="@+id/radioGroup"
@@ -291,6 +298,7 @@
         android:layout_marginTop="45dp"
         android:ems="10"
         android:inputType="number"
+        android:text="896"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/nameEdit"
         app:layout_constraintHorizontal_bias="1.0"
@@ -302,6 +310,7 @@
         android:layout_width="231dp"
         android:layout_height="23dp"
         android:layout_marginTop="40dp"
+        android:entries="@array/levelValues"
         app:layout_constraintEnd_toEndOf="@+id/hpEdit"
         app:layout_constraintStart_toStartOf="@+id/hpEdit"
         app:layout_constraintTop_toBottomOf="@+id/weightEdit" />

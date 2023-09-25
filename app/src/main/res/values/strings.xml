@@ -14,7 +14,17 @@
     <string name="reset">Reset</string>
     <string name="submit">Submit</string>
     <string name="basestats">Base Stats</string>
-    <string-array name="level_array">
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="unknown">Unk</string>
+    <string name="ntnlDefault">896</string>
+    <string name="nameDefault">Glastrier</string>
+    <string name="speciesDefault">Wild Horse Pokemon</string>
+    <string name="heightDefault">2.2 m</string>
+    <string name="weightDefault">800.0 kg</string>
+    <string name="baseStatsDefault">0</string>
+
+    <string-array name="levelValues">
         <item>1</item>
         <item>2</item>
         <item>3</item>
