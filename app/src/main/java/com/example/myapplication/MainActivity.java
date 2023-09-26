@@ -342,13 +342,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //activity_main is the constraint layout
-        //linear is the linear layout
-        //table is the table layout
-        setContentView(R.layout.constraint);
-        contentV = (R.id.mainPageC); //for constraint view
+        setContentView(R.layout.linear);
+        //contentV = (R.id.mainPageC); //for constraint view
         //contentV = (R.id.mainPageT); //for table view
-        //contentV = (R.id.mainPageL); //for linear view
+        contentV = (R.id.mainPageL); //for linear view
 
 
         reset = findViewById(R.id.resetButton);
