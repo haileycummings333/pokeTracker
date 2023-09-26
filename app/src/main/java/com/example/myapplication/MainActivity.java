@@ -292,7 +292,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Information stored in the database.", Toast.LENGTH_SHORT).show();
             } else {
                 // Notify the user about errors via Toast
-                Toast.makeText(MainActivity.this, "Please fix the errors in red.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Please fix the errors in red.", Toast.LENGTH_LONG).show();
             }
         }
     };
@@ -348,7 +348,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.constraint);
         contentV = (R.id.mainPageC); //for constraint view
         //contentV = (R.id.mainPageT); //for table view
-       // contentV = (R.id.mainPageL); //for linear view
+        //contentV = (R.id.mainPageL); //for linear view
 
 
         reset = findViewById(R.id.resetButton);
