@@ -3,8 +3,11 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
@@ -13,7 +16,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 //variables
- Button reset, submit;
+ Button reset, submit, changeColorsButton;
  RadioGroup gender;
  Spinner levelSpin;
  EditText nationalET, nameET, speciesET, heightET, weightET, hpET, attackET, defenseET;
@@ -35,6 +38,27 @@ public class MainActivity extends AppCompatActivity {
             levelSpin.setSelection(0);
             gender.clearCheck();
 
+        }
+    };
+
+    View.OnClickListener colorsListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            int clicks = 0;
+            if(clicks == 3){
+                //change colors to purple
+                clicks = 0;
+                clicks ++;
+            } else if (clicks==1) {
+                //change colors to green
+                clicks ++;
+            } else if (clicks==2) {
+                //change colors to pink
+                clicks++;
+            } else if (clicks ==3) {
+                //change colors to blue
+                clicks++;
+            }
         }
     };
 
@@ -94,6 +118,9 @@ public class MainActivity extends AppCompatActivity {
 
             // Validate Height
             String heightStr = heightET.getText().toString();
+            if (heightStr.endsWith("m")) {
+                heightStr = heightStr.substring(0, heightStr.length() - 1);
+            }
             if (heightStr.isEmpty() || Double.parseDouble(heightStr) < 0.3 || Double.parseDouble(heightStr) > 19.99) {
                 heightET.setTextColor(getResources().getColor(R.color.red));
                 isValid = false;
@@ -103,7 +130,10 @@ public class MainActivity extends AppCompatActivity {
 
             // Validate Weight
             String weightStr = weightET.getText().toString();
-            if (weightStr.isEmpty() || Double.parseDouble(weightStr) < 0.3 || Double.parseDouble(weightStr) > 19.99) {
+            if (weightStr.endsWith("kg")) {
+                weightStr = weightStr.substring(0, weightStr.length() - 2);
+            }
+            if (weightStr.isEmpty() || Double.parseDouble(weightStr) < 0.1 || Double.parseDouble(weightStr) > 820.00) {
                 weightET.setTextColor(getResources().getColor(R.color.red));
                 isValid = false;
             } else {
@@ -205,6 +235,49 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    TextWatcher weightWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            String input = charSequence.toString();
+            if (!input.endsWith("kg")) {
+                input += "kg";
+                weightET.setText(input);
+                weightET.setSelection(input.length());
+            }
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+
+        }
+    };
+
+    TextWatcher heightWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            String input = charSequence.toString();
+            if (!input.endsWith("m")) {
+                input += "m";
+                heightET.setText(input);
+                heightET.setSelection(input.length());
+            }
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+
+        }
+    };
 
 
     //ONCREATE
@@ -214,6 +287,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         reset = findViewById(R.id.resetButton);
         submit = findViewById(R.id.submitButton);
+        changeColorsButton = findViewById(R.id.backgroundButton);
+
         nationalET = findViewById(R.id.ntnlNumEdit);
         nameET = findViewById(R.id.nameEdit);
         speciesET = findViewById(R.id.speciesEdit);
@@ -223,11 +298,18 @@ public class MainActivity extends AppCompatActivity {
         attackET = findViewById(R.id.attackEdit);
         defenseET = findViewById(R.id.defenseEdit);
         gender = findViewById(R.id.radioGroup);
+        levelSpin = findViewById(R.id.spinner);
 
         reset.setOnClickListener(resetListener);
         submit.setOnClickListener(submitListener);
+        changeColorsButton.setOnClickListener(colorsListener);
         levelSpin.setOnItemSelectedListener(spinListener);
 
+        weightET.addTextChangedListener(weightWatcher);
+        heightET.addTextChangedListener(heightWatcher);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.levelValues, android.R.layout.simple_spinner_dropdown_item);
+        levelSpin.setAdapter(adapter);
 
 
 

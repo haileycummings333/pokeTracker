@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/backgroundPurple">
 
     <EditText
         android:id="@+id/nameEdit"
@@ -180,7 +181,8 @@
         android:layout_marginBottom="9dp"
         android:text="@string/reset"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
     <Button
         android:id="@+id/submitButton"
@@ -314,5 +316,16 @@
         app:layout_constraintEnd_toEndOf="@+id/hpEdit"
         app:layout_constraintStart_toStartOf="@+id/hpEdit"
         app:layout_constraintTop_toBottomOf="@+id/weightEdit" />
+
+    <Button
+        android:id="@+id/backgroundButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginBottom="9dp"
+        android:text="@string/chgeBckd"
+        android:textSize="9sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

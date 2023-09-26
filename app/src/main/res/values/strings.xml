@@ -23,6 +23,7 @@
     <string name="heightDefault">2.2 m</string>
     <string name="weightDefault">800.0 kg</string>
     <string name="baseStatsDefault">0</string>
+    <string name="chgeBckd">Change Background</string>
 
     <string-array name="levelValues">
         <item>1</item>
